@@ -4,7 +4,7 @@ module.exports = {
   context: __dirname,
   entry: './lib/main.js',
   output: {
-    filename: 'jquery_lite.js',
+    filename: 'fiefDOM.js',
     path: path.resolve(__dirname, 'lib')
   },
   devtool: 'source-map',
