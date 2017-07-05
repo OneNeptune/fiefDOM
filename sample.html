@@ -8,7 +8,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="./lib/fiefDOM.js"></script>
     <script>
-      $f(() => $('footer').append('loaded!'));
+      $f(() => {
+        const footer = $f('footer');
+        const button = $f('button:first-of-type');
+        const button2 = $f('button:last-of-type');
+        const firstUl = $f('ul:first-of-type');
+        footer.append('Loaded!')
+        button.on('click', () => {
+          const newLi = document.createElement('li');
+          const fiefNewLi = $f(newLi);
+          fiefNewLi.html('new li!');
+          firstUl.append(fiefNewLi)
+        })
+      });
     </script>
 
   </head>
@@ -18,28 +30,13 @@
     <article>
 
       <nav>
+        <button>Click to create new LI</button>
         <ul>
-          <li>Home</li>
-          <li>Not Home</li>
-          <li>Work</li>
-          <p>test</p>
-        </ul>
-
-        <ul>
-          <li>Good</li>
-          <li>Bad</li>
-          <li>Ugly</li>
-          <li>Clint Eastwood</li>
         </ul>
       </nav>
 
-      <article class="classy">
-        <p class="first-class" id="This differs">This is a p with a class and an id nested under an article.</p>
-        <p class="no-class">This is the last child of an article</p>
-      </article>
-
       <footer class="not-classy">
-        <p>This is an example p nested in a footer.</p>
+        <p>It should say 'Loaded!' below this, as a 'onload' script was called in the header to append the string to the footer section</p>
       </footer>
 
     </article>
