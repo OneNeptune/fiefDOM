@@ -2,3 +2,5 @@ node_modules/
 .DS_Store
 .byebug_history
 /lib/fiefDOM.js.map
+/lib/fiefDOM.js
+index.html
